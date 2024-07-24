@@ -25,6 +25,15 @@ class CWeapon {
                     Memory.WriteU32(0x45CA3E, 0x00008384, true);
                     Memory.WriteU8(0x45CA42, 0x00, true);
                 }
+         if (tab == 0) {
+            ImGui.Columns(2);
+            this.freezeClock = ImGui.Checkbox("Freeze clock", this.freezeClock);
+            if (ImGui.IsItemActive("ClockFrzAct")) {
+                if (this.freezeClock){
+                    Clock.Pause();
+                } else {
+                    Clock.Unpause();
+                }
             }
             ImGui.NextColumn();
          
