@@ -21,14 +21,7 @@ class CGame {
                 } else {
                     Clock.Unpause();
                 }
-            }
-            this.hideHUD = ImGui.Checkbox("Hide hud", this.hideHUD);
-            if (ImGui.IsItemActive("hideHudFoc")) {
-                if (this.hideHUD){
-                    Memory.WriteU16(0x53CFEC, 0xD2FF, true);
-                } else {
-                    Memory.WriteU16(0x53CFEC, 0x9090, true);
-                }
+
             }
             ImGui.NextColumn();
             this.stopPedProduction = ImGui.Checkbox("Stop ped production", this.stopPedProduction);
